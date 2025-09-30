@@ -9,6 +9,7 @@ export default defineConfig([
     files: ['**/*.{js,mjs,jsx,vue}'],
   },
 
+
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
 
   {
