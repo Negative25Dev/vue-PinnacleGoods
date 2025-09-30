@@ -5,7 +5,11 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+
+import '@/styles/common.scss'
 import { get } from '@/apis/textAPI'
+
+
 get().then(res => {
     console.log(res);
 
