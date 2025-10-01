@@ -1,4 +1,4 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    我是home面
+  <h1></h1>
 </template>
