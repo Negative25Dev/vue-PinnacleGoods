@@ -10,6 +10,7 @@ import '@/styles/common.scss'
 import { get } from '@/apis/textAPI'
 
 
+
 get().then(res => {
     console.log(res);
 
