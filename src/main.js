@@ -1,5 +1,5 @@
 // import './assets/main.css'
-
+import { useIntersectionObserver } from '@vueuse/core'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
@@ -18,3 +18,18 @@ app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
+
+//注册自定义命令
+app.directive('img-lazy', {
+    mounted(el, binding) {
+        useIntersectionObserver(
+            el,
+            ([{ isIntersecting }]) => {
+                if (isIntersecting) {
+                    el.src = binding.value
+                }
+
+            },
+        )
+    }
+})

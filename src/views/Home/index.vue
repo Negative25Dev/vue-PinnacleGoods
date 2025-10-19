@@ -22,6 +22,6 @@ import HomePanel from './components/HomePanel.vue'
   </HomePanel>
 
 
-    <HomePanel title="人气推荐"  sub-title="新鲜好物">
+    <HomePanel>
   </HomePanel>
 </template>
