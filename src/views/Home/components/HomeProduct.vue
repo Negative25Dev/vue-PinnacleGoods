@@ -24,7 +24,7 @@ onMounted(()=>getGoods())
           <strong class="label">
             <span>{{ cate.name }}馆</span>
             <span>{{ cate.saleInfo }}</span>
-          </strong>
+          </strong> 
         </RouterLink>
         <ul class="goods-list">
           <li v-for="good in cate.goods" :key="good.id">
