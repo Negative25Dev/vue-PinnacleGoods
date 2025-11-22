@@ -1,34 +1,34 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import HomePanel from './HomePanel.vue'
-import {getGoodsAPI} from '@/apis/home'
-import Goodsitem from './Goodsitem.vue'
+import { getGoodsAPI } from '@/apis/home'
+import Goodsitem from './GoodsItem.vue'
 
-const goodsProduct=ref([])
+const goodsProduct = ref([])
 
-const getGoods=async()=>{
- const res=await getGoodsAPI()
-goodsProduct.value=res.result
+const getGoods = async () => {
+  const res = await getGoodsAPI()
+  goodsProduct.value = res.result
 
 }
 
-onMounted(()=>getGoods())
+onMounted(() => getGoods())
 </script>
 
 <template>
   <div class="home-product">
-<HomePanel :title="cate.name" v-for="cate in goodsProduct" :key="cate.id">
+    <HomePanel :title="cate.name" v-for="cate in goodsProduct" :key="cate.id">
       <div class="box">
         <RouterLink class="cover" to="/">
           <img v-img-lazy="cate.picture" />
           <strong class="label">
             <span>{{ cate.name }}馆</span>
             <span>{{ cate.saleInfo }}</span>
-          </strong> 
+          </strong>
         </RouterLink>
         <ul class="goods-list">
           <li v-for="good in cate.goods" :key="good.id">
-           <Goodsitem :goods="good"></Goodsitem>
+            <Goodsitem :goods="good"></Goodsitem>
           </li>
         </ul>
       </div>
@@ -40,6 +40,7 @@ onMounted(()=>getGoods())
 .home-product {
   background: #fff;
   margin-top: 20px;
+
   .sub {
     margin-bottom: 2px;
 
