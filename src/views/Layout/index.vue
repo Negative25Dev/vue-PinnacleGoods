@@ -8,15 +8,15 @@ import LayoutFixed from './components/LayoutFixed.vue'
 
 import { useCategoryStore } from '@/stores/category'
 import { onMounted } from 'vue'
-const categoryStore =useCategoryStore()
-onMounted(()=>categoryStore.getCategory())
+const categoryStore = useCategoryStore()
+onMounted(() => categoryStore.getCategory())
 </script>
 
 <template>
-  <LayoutFixed/>
+  <LayoutFixed />
   <LayoutNav />
- <LayoutHeader />
-  <RouterView />
+  <LayoutHeader />
+  <RouterView :key="'$route.fullpath'" />
   <LayoutFooter />
-   
+
 </template>
