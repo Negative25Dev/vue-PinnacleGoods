@@ -1,4 +1,13 @@
 <script setup>
+import router from '@/router';
+import { useUserStore } from '@/stores/user'
+const userStore = useUserStore()
+const confirm = () => {
+  console.log('用户要退出登入了');
+  userStore.clearUserInfo()
+  router.push('login')
+
+}
 
 </script>
 
@@ -6,10 +15,10 @@
   <nav class="app-topnav">
     <div class="container">
       <ul>
-        <template v-if="false">
-          <li><a href="javascript:;"><i class="iconfont icon-yonghu"></i>用户名</a></li>
+        <template v-if="userStore.userInfo.token">
+          <li><a href="javascript:;"><i class="iconfont icon-yonghu"></i>{{ userStore.userInfo.account }}</a></li>
           <li>
-            <el-popconfirm title="确认退出吗?" confirm-button-text="确认" cancel-button-text="取消">
+            <el-popconfirm @confirm="confirm" title="确认退出吗?" confirm-button-text="确认" cancel-button-text="取消">
               <template #reference>
                 <a href="javascript:;">退出登录</a>
               </template>
