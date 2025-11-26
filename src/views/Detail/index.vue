@@ -3,7 +3,7 @@ import { getDetail } from '@/apis/detail'
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import DetailHot from './components/DetailHot.vue';
-import { useCartStore } from '@/stores/carStore'
+import { useCartStore } from '@/stores/cartStore'
 import { ElMessage } from 'element-plus';
 const cartStore = useCartStore()
 
@@ -65,7 +65,7 @@ const addCart = () => {
                     </el-breadcrumb-item>
                     <el-breadcrumb-item :to="{ path: `/category/sub/${goods.categories[0].id}` }">{{
                         goods.categories[0].name
-                    }}
+                        }}
                     </el-breadcrumb-item>
                     <el-breadcrumb-item>抓绒保暖，毛毛虫子儿童运动鞋</el-breadcrumb-item>
                 </el-breadcrumb>
