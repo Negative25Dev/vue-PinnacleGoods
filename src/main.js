@@ -20,5 +20,7 @@ app.use(pinia)
 app.use(router)
 app.use(componentPlugin)
 app.use(lazyPlugin)
+
+
 app.mount('#app')
 
