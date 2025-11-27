@@ -1,6 +1,6 @@
 <script setup>
 import router from '@/router';
-import { useUserStore } from '@/stores/useuser'
+import { useUserStore } from '@/stores/userStore'
 const userStore = useUserStore()
 const confirm = () => {
   console.log('用户要退出登入了');
